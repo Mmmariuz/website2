@@ -1,0 +1,17 @@
+
+@font-face {
+    src: url(../Fonts/BebasNeue-Regular.ttf);
+    font-family: Beb;
+}
+
+
+
+
+.header-main-nav ul li a {
+    padding: 0 10px;
+    font-family: Beb;
+    line-height: 60px;
+    color: blueviolet;
+    display: block;
+    height: 100%;
+}
