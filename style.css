@@ -5,6 +5,34 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
   }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #f13737;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+
+  .logo {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+  }
+
+  .hello {
+    position: absolute;
+    height: 100px;
+    left: 0px;
+    width: 250;
+  }
   
   nav {
     height: 80px;
@@ -15,13 +43,7 @@
     padding: 0rem calc((100vw - 1300px) / 2);
   }
   
-  .logo {
-    color: #000;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    padding: 0 2rem;
-  }
+ 
   
   nav a {
     text-decoration: none;
