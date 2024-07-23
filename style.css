@@ -1,290 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
-  }
-
-
-  body {
-   background: url(./Pictures/file\ 2.png); no-repeat;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   background-size: cover;
-   background-position: center;
-   
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-header {
+body {
+   /* background: #081b29; */
+    color: #ededed;
+}
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
-    background: #f13737;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-  }
-
-  .logo {
-    color: #000000;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    padding: 0 2rem;
-  }
-
-  .hello {
-    position: absolute;
-    height: 100px;
-    left: 0px;
-    width: 250;
-  }
-  
-  nav {
-    height: 80px;
-    background: #40a8ee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem calc((100vw - 1300px) / 2);
-  }
-  
-  
-  nav a {
-    text-decoration: none;
-    color: #000;
-    padding: 0 1.5rem;
-  }
-  
-.nav-item .btnlogin-popup {
-    width: 130px;
-    height: 50px;
+    padding: 20px 10%;
     background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
-  nav a:hover {
-    color: #f13737;
-  }
-  
-
-  .column-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #000000;
-    padding: 0rem 2rem;
-  }
-  
-  
-  .column-left p {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-  }
-  
-   button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    border: none;
-    color: #fad818;
-    background: #000;
-    cursor: pointer;
-    border-radius: 50px;
-  }
-  
-  button:hover {
-    background: #f13737;
-    color: #ffffff;
-  }
-  
- 
-
-  .wrapper {
+.logo {
     position: relative;
-    width: 400;
-    height: 440px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transform: scale(0);
-    transition: transform .5s ease, height .2s ease;
-  }
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-  .wrapper.active-popup {
-    transform: scale(1);
-  }
-  
-  .wrapper.active {
-    height: 520px;
-  }
-  
-  .wrapper .from-box {
-    width: 100%;
-    padding: 40px;
-  }
-
-  .wrapper .from-box.login {
-   transition: transform .18s ease;
-   transform: translateX(0);
-  }
-
-  .wrapper.active .from-box.login {
-    transition: none;
-    transform: translateX(-400px);
-   }
-
-  .wrapper .from-box.register {
-    position: absolute;
-    transition: none;
-    transform: translateX(400px);
-  }
-
-  .wrapper.active .from-box.register {
-    transition: transform .18s ease;
-    transform: translateX(0);
-   }
-
-  .wrapper .icon-close {
+.logo::before {
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
-    width: 45px;
-    height: 45px;
-    background: #000000;
-    font-size: 2em;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20px;
-    cursor: pointer;
-    z-index: 1;
-
-  }
-
-  .from-box h2 {
-    font-size: 2em;
-    color: #000000;
-    text-align: center;
-  }
-
-  .input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 2px solid #000000;
-    margin: 30px 0;
-  }
-
-  .input-box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #000000;
-    font-weight: 500;
-    pointer-events: none;
-    transition: .5s;
-  }
-
-  .input-box input:focus~label,
-  .input-box input:valid~label {
-    top: -5px;
-   }
-
-  .input-box input {
     width: 100%;
     height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: #000000;
-    font-weight: 600;
-    padding: 0 35px 0 5px;
-  }
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
 
-  .input-box .icon {
-    position: absolute;
-    right: 8px;
-    font-size: 1.2em;
-    color: #000000;
-    line-height: 57px;
-  }
-
-  .remember-forgot {
-    font-size: .9em;
-    color: #000000;
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
     font-weight: 500;
-    margin: -15px 0 15px;
+    margin-left: 35px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+.home {
+    height: 100vh;
+    background: url(./BIlde1.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    /* background: yellowgreen; Slett */
+    max-width: 600px;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-content .btn-box {
+    position: relative;
     display: flex;
     justify-content: space-between;
-  }
+    width: 345px;
+    height: 50px;
+    /* background: yellowgreen; Slett */
+}
 
-  .remember-forgot label input {
-    accent-color: #000;
-    margin-right: 3px;
-  }
-
-  .remember-forgot a {
-    color: #000000;
-    text-decoration: none;
-  }
-
-  .remember-forgot a:hover {
-    text-decoration: underline;
-  }
-
-  .btn {
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 100%;
-    height: 45px;
-    background: #000000;
-    border: none;
-    outline: none;
-    border-radius:  6px;
-    cursor: pointer;
-    font-size:  1em;
-    color: #fff;
-    font-weight: 500;
-  }
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
 
-  .login-register {
-    font-size: 9em;
-    color: #000000;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
-  }
-
-  .login-register p a {
-    color: #000000;
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
     text-decoration: none;
     font-weight: 600;
-  }
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
 
-  .login-register p a:hover {
-    text-decoration: underline;
-  }
+.btn-box a:hover {
+    color: #00abf0;
+}
 
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+    }
+
+.btn-box a:nth-child(2)::before {
+    background: #00abf0;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 0%;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute; 
+    bottom: 40px;
+    width: 170px;
+    /* background: red; Slett */
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a {
+    color: #00abf0;
+}
+
+.home-sci a:hover {
+    color: #081b29;
+}
+
+.home-sci a::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 750px;
+    height: 100%;
+    background: transparent;
+    /* border: 2px solid red; */
+    transition: 3s;
+    animation: manipActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+.home-imgHover:hover {
+    background: #081b29;
+    opacity: .8;
+}
+
+.home-imgHover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 145%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 100;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes manipActiveHover {
+    100% {
+        pointer-events: auto;
+    }
+}
