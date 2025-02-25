@@ -7,8 +7,8 @@
 }
 
 body {
-   /* background-color: #81B29A; /*Hex codes: antique white #F4F1DE, terra cotta #E07A5F, deep slate blue #3D405B, muted sage green #81B29A*/
-    background: url(./Designer2.jpeg) no-repeat center center/cover;
+    background-color: #F4F1DE; /*Hex codes: antique white #F4F1DE, terra cotta #E07A5F, deep slate blue #3D405B, muted sage green #81B29A*/
+   /* background: url(./Designer2.jpeg) no-repeat center center/cover; */
     color: #3D405B;
     transition: background-color 0.7s, color 0.7s, background 0.7s;
     display: flex;
@@ -16,25 +16,31 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow */
+    border-radius: 100px; /* More rounded corners */
+    padding: 20px; /* Add padding to prevent content from touching the edges */
 }
 
 body.dark-mode {
-    background: url(./Designer3.jpeg) no-repeat center center/cover;
-    color: #81B29A;
+   /* background: url(./Designer3.jpeg) no-repeat center center/cover; */
+    background-color: #3D405B;
+    color: #F4F1DE;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow */
+    border-radius: 100px; /* More rounded corners */
 }
 
 button {
     margin: 20px;
     padding: 10px;
     background-color: #3D405B; /* Dark background */
-    color: #81B29A; /* Light text */
+    color: #F4F1DE; /* Light text */
     border: none;
     cursor: pointer;
     border-radius: 20px; /* More rounded edges */
 }
 
 body.dark-mode button {
-    background-color: #81B29A; /* Light background */
+    background-color: #F4F1DE; /* Light background */
     color: #3D405B; /* Dark text */
     border-radius: 20px; /* More rounded edges */
 }
@@ -118,11 +124,11 @@ body.dark-mode .image-text {
     margin: 20px auto; /* Center the text box horizontally */
     text-align: center; /* Center the text inside the text box */
     position: relative;
-    top: 150px; /* Adjust this value to move the text box lower */
+    top: 100px; /* Adjust this value to move the text box lower */
 }
 
 body.dark-mode .text-box {
-   /* background-color: #81B29A; /* Background color in dark mode */
+    background-color: #3D405B; /* Background color in dark mode */
     color: #81B29A; /* Text color in dark mode */
     border-color: #81B29A; /* Border color in dark mode */
 }
@@ -160,100 +166,91 @@ nav a:hover {
     color: #fad818;
 }
 
-@media (max-width: 768px) {
-    body {
-        flex-direction: column;
-        padding: 10px;
-    }
+/* Smoke Animation */
+.smoke-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
 
+.smoke {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    animation: smoke 5s infinite;
+}
+
+.smoke:nth-child(2) {
+    left: 20%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.smoke:nth-child(3) {
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+@keyframes smoke {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(5);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
     header {
         padding: 10px 20px;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .content-container {
         margin-top: 80px; /* Adjust this value to move the content down */
     }
 
-    .left-container, .right-container {
+    .image-container {
         flex-direction: column;
         align-items: center;
-        padding: 5px;
     }
 
-    .image-container {
-        margin: 10px;
-    }
-
-    .my-image, .top-right-image {
-        width: 100px; /* Adjusted width for mobile */
-        height: 150px; /* Adjusted height for mobile */
+    .image-text {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
     }
 
     .text-box {
-        width: 100%; /* Full width on mobile */
-        padding: 10px;
-        margin: 10px 0;
-        top: 100px; /* Adjust this value to move the text box lower */
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 1rem;
-    }
-
-    nav a {
-        padding: 0.5rem 0;
+        width: 90%;
+        top: 50px; /* Adjust this value to move the text box lower */
     }
 }
 
-@media (max-width: 430px) {
-    body {
-        flex-direction: column;
-        padding: 5px;
+@media (min-width: 601px) {
+    .wrapper-main {
+        width: 100%;
     }
+}
 
-    header {
-        padding: 10px 15px;
-        flex-direction: column;
-        align-items: flex-start;
+@media (min-width: 768px) {
+    .wrapper-main {
+        width: 100%;
     }
+}
 
-    .content-container {
-        margin-top: 60px; /* Adjust this value to move the content down */
-    }
-
-    .left-container, .right-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 5px;
-    }
-
-    .image-container {
-        margin: 5px;
-    }
-
-    .my-image, .top-right-image {
-        width: 80px; /* Adjusted width for iPhone 16 Pro */
-        height: 120px; /* Adjusted height for iPhone 16 Pro */
-    }
-
-    .text-box {
-        width: 100%; /* Full width on iPhone 16 Pro */
-        padding: 5px;
-        margin: 5px 0;
-        top: 80px; /* Adjust this value to move the text box lower */
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 0.5rem;
-    }
-
-    nav a {
-        padding: 0.25rem 0;
+@media (min-width: 992px) {
+    .wrapper-main {
+        width: 100%;
     }
 }
