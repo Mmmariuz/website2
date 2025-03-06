@@ -5,16 +5,27 @@
     <link rel="icon"  type="image/x-icon" href="./Bilder/Logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLOM</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="star"></div>
     <header>
         <div class="logo">Project TLOM</div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#project">Project</a>
-            <a href="#about">About</a>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                    <li>
+                    <a href="#">Menu</a>   
+                    <ul class="dropdown">
+                        <li><a href="./project.html">Project</a></li>
+                        <li><a href="./about.html">About Me </a></li>
+                        <!--<li><a href="./project.html">Project 3</a></li>-->
+                    </ul>
+                </li>
+                <!-- <li><a href="./project.html">Project</a></li> -->
+                <!--<li><a href="about.html">About</a></li>-->
+            </ul>
+
             <div class="nav-item">
                 <button id="toggle-button">Dark/Light</button>
             </div>
@@ -41,11 +52,7 @@
         </div>
     </div>
 
-    <div class="smoke-container">
-        <div class="smoke"></div>
-        <div class="smoke"></div>
-        <div class="smoke"></div>
-    </div>
+   
 
     <script src="script.js"></script>
 </body>

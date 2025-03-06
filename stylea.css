@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #81B29A; /*Hex codes: antique white #F4F1DE, terra cotta #E07A5F, deep slate blue #3D405B, muted sage green #81B29A*/
+    border-radius: 100px; /* More rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow */
+    padding: 20px; /* Add padding to prevent content from touching the edges */
+}
+
+body.dark-mode {
+    /* background: url(./Designer3.jpeg) no-repeat center center/cover; */
+     background-color: #3D405B;
+     color: #F4F1DE;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow */
+     border-radius: 100px; /* More rounded corners */
+ }
+ 
+ button {
+     margin: 20px;
+     padding: 10px;
+     background-color: #3D405B; /* Dark background */
+     color: #F4F1DE; /* Light text */
+     border: none;
+     cursor: pointer;
+     border-radius: 20px; /* More rounded edges */
+ }
+ 
+ body.dark-mode button {
+     background-color: #F4F1DE; /* Light background */
+     color: #3D405B; /* Dark text */
+     border-radius: 20px; /* More rounded edges */
+ }
+ 
+ header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding: 20px 100px;
+     background: rgba(0, 0, 0, 0.8);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 99;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+ }
+
+ .logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.logo-image {
+    height: 50px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.Bilde1 {
+    height: 400px; /* Adjust the height as needed */
+    width: 700px; /* Maintain aspect ratio */
+    margin: 400px;
+    border-radius: 0 30px 0 30px;  /* Rounded corners */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+.text-box {
+    position: absolute;
+    top: 850px; /* Adjust this value to move the text box lower */
+    left: 600px; /* Adjust this value to move the text box right */
+    width: 300px;
+    height: 200px;
+    /*background: rgba(0, 0, 0, 0.5);*/
+    padding: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+ul {
+    list-style-type: none;
+    background: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    border-radius: 20px
+}
+
+ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 20px
+}
+
+ul li ul.dropdown li {
+    display: block
+    border-radius: 20px
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 999;
+    display: none;
+    border-radius: 20px
+}
+
+ul li a:hover {
+    background: #C41E3A;
+    border-radius: 20px
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    border-radius: 20px
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .content-container {
+        margin-top: 80px; /* Adjust this value to move the content down */
+    }
+
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-text {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .text-box {
+        width: 90%;
+        top: 50px; /* Adjust this value to move the text box lower */
+    }
+}
+
+@media (min-width: 601px) {
+    .wrapper-main {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .wrapper-main {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper-main {
+        width: 100%;
+    }
+}

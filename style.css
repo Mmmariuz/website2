@@ -79,10 +79,12 @@ header {
 
 .left-container {
     justify-content: flex-start; /* Align to the left */
+    right: -520px; /* Adjust this value to move the container to the left */
 }
 
 .right-container {
     justify-content: flex-end; /* Align to the right */
+    left: -300px; /* Adjust this value to move the container to the right */
 }
 
 .image-container {
@@ -90,14 +92,28 @@ header {
     align-items: center;
     justify-content: center; /* Center images horizontally */
     margin: 20px; /* Add some space around the containers */
+    transition: 0.5s ease;/* Smooth transition effect */
+    cursor: pointer;; /* Add pointer cursor on hover */
+}
+
+.image-container:hover {
+    transform: scale(1.1); /* Scale up the image on hover */
+    filter: grayscale(0%); /* Remove grayscale effect on hover */
 }
 
 .my-image, .top-right-image {
-    border-radius: 20px; /* Rounded corners on the border */
+    border-radius: 30px 0 30px 0; /* Rounded corners on the border */
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Add a shadow to the image */
     width: 150px; /* Fixed width */
     height: 250px; /* Fixed height */
     position: relative; /* Relative positioning */
+}
+
+img {
+    border-radius: 10px;
+    -webkit-box-reflect: below 2.5px linear-gradient(transparent, rgba(3, 3, 3, 0.2)); /* Add reflection to the image */
+    border: 5px ridge #a5b1c2; /* Add a border around the image */
+    margin: 5px; /* Add some margin around the image */
 }
 
 .image-text {
@@ -110,8 +126,8 @@ header {
 }
 
 body.dark-mode .image-text {
-    color: #81B29A; /* Text color in dark mode */
-    background-color: rgba(61, 64, 91, 0.8); /* Background color in dark mode with some transparency */
+    color: #3D405B; /* Text color in dark mode */
+    background-color: #81B29A; (61, 64, 91, 0.8); /* Background color in dark mode with some transparency */
 }
 
 .text-box {
@@ -121,10 +137,11 @@ body.dark-mode .image-text {
     border-radius: 10px; /* Rounded corners */
     background-color: rgb(255, 255, 255); /* Background color of the text box */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow to the text box */
-    margin: 20px auto; /* Center the text box horizontally */
+    margin-left: -650px; /* Adjust this value to move the text box right */
     text-align: center; /* Center the text inside the text box */
-    position: relative;
-    top: 100px; /* Adjust this value to move the text box lower */
+   /* position: relative; */
+    top: 200px; /* Adjust this value to move the text box lower */
+   
 }
 
 body.dark-mode .text-box {
@@ -147,6 +164,53 @@ body.dark-mode .text-box {
     width: auto; /* Maintain aspect ratio */
 }
 
+ul {
+    list-style-type: none;
+    background: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    border-radius: 20px;
+}
+
+ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+ul li ul.dropdown li {
+    display: block
+    /* border-radius: 20px;*/
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 999;
+    display: none;
+    border-radius: 20px;
+    /* border-radius: 0px 0px 4px 4px; */
+}
+
+ul li a:hover {
+    background: #C41E3A;
+    border-radius: 20px;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    border-radius: 20px;
+}
+
 nav {
     height: 80px;
     display: flex;
@@ -155,60 +219,6 @@ nav {
     padding: 0rem calc((100vw - 1300px) / 2);
 }
 
-nav a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 0 1.5rem;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-nav a:hover {
-    color: #fad818;
-}
-
-/* Smoke Animation */
-.smoke-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.smoke {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    position: absolute;
-    animation: smoke 5s infinite;
-}
-
-.smoke:nth-child(2) {
-    left: 20%;
-    animation-duration: 6s;
-    animation-delay: 1s;
-}
-
-.smoke:nth-child(3) {
-    left: 40%;
-    animation-duration: 7s;
-    animation-delay: 2s;
-}
-
-@keyframes smoke {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-200px) scale(5);
-        opacity: 0;
-    }
-}
 
 /* Responsive Design */
 @media (max-width: 600px) {
