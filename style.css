@@ -1,266 +1,171 @@
-* {
-    box-sizing: border-box;
+:root {
+    --primary-color: #333;
+    --secondary-color: #f4f4f4;
+    --accent-color: #007bff;
+    --hover-color: #0056b3;
+    --text-color: #222;
+    --background-color: white;
+  }
+  
+  /* DARK THEME VARIABLES */
+  body.dark {
+    --primary-color: #f4f4f4;
+    --secondary-color: #222;
+    --accent-color: #66ccff;
+    --hover-color: #3399cc;
+    --text-color: #ddd;
+    --background-color: #111;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
-}
-
-body {
-    background-color: #F4F1DE; /*Hex codes: antique white #F4F1DE, terra cotta #E07A5F, deep slate blue #3D405B, muted sage green #81B29A*/
-   /* background: url(./Designer2.jpeg) no-repeat center center/cover; */
-    color: #3D405B;
-    transition: background-color 0.7s, color 0.7s, background 0.7s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow */
-    border-radius: 100px; /* More rounded corners */
-    padding: 20px; /* Add padding to prevent content from touching the edges */
-}
-
-body.dark-mode {
-   /* background: url(./Designer3.jpeg) no-repeat center center/cover; */
-    background-color: #3D405B;
-    color: #F4F1DE;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow */
-    border-radius: 100px; /* More rounded corners */
-}
-
-button {
-    margin: 20px;
-    padding: 10px;
-    background-color: #3D405B; /* Dark background */
-    color: #F4F1DE; /* Light text */
-    border: none;
-    cursor: pointer;
-    border-radius: 20px; /* More rounded edges */
-}
-
-body.dark-mode button {
-    background-color: #F4F1DE; /* Light background */
-    color: #3D405B; /* Dark text */
-    border-radius: 20px; /* More rounded edges */
-}
-
-header {
-    position: fixed;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+  }
+  a:hover {
+    color: var(--accent-color);
+  }
+  
+  header {
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: rgba(0, 0, 0, 0.8);
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 100px; /* Adjust this value to move the content down */
-}
-
-.left-container, .right-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: relative; /* Relative positioning */
-    padding: 10px; /* Add padding for better spacing */
-}
-
-.left-container {
-    justify-content: flex-start; /* Align to the left */
-    right: -520px; /* Adjust this value to move the container to the left */
-}
-
-.right-container {
-    justify-content: flex-end; /* Align to the right */
-    left: -300px; /* Adjust this value to move the container to the right */
-}
-
-.image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center images horizontally */
-    margin: 20px; /* Add some space around the containers */
-    transition: 0.5s ease;/* Smooth transition effect */
-    cursor: pointer;; /* Add pointer cursor on hover */
-}
-
-.image-container:hover {
-    transform: scale(1.1); /* Scale up the image on hover */
-    filter: grayscale(0%); /* Remove grayscale effect on hover */
-}
-
-.my-image, .top-right-image {
-    border-radius: 30px 0 30px 0; /* Rounded corners on the border */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Add a shadow to the image */
-    width: 150px; /* Fixed width */
-    height: 250px; /* Fixed height */
-    position: relative; /* Relative positioning */
-}
-
-img {
-    border-radius: 10px;
-    -webkit-box-reflect: below 2.5px linear-gradient(transparent, rgba(3, 3, 3, 0.2)); /* Add reflection to the image */
-    border: 5px ridge #a5b1c2; /* Add a border around the image */
-    margin: 5px; /* Add some margin around the image */
-}
-
-.image-text {
-    margin-left: 20px; /* Space between the image and the text */
-    color: #3D405B; /* Text color */
-    font-size: 1rem; /* Font size */
-    background-color: rgba(255, 255, 255, 0.8); /* Background color with some transparency */
-    padding: 10px; /* Padding inside the box */
-    border-radius: 10px; /* Rounded corners */
-}
-
-body.dark-mode .image-text {
-    color: #3D405B; /* Text color in dark mode */
-    background-color: #81B29A; (61, 64, 91, 0.8); /* Background color in dark mode with some transparency */
-}
-
-.text-box {
-    width: 300px; /* Set the width of the text box */
-    padding: 20px; /* Add some padding inside the text box */
-    border: 2px solid black; /* Add a border around the text box */
-    border-radius: 10px; /* Rounded corners */
-    background-color: rgb(255, 255, 255); /* Background color of the text box */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow to the text box */
-    margin-left: -650px; /* Adjust this value to move the text box right */
-    text-align: center; /* Center the text inside the text box */
-   /* position: relative; */
-    top: 200px; /* Adjust this value to move the text box lower */
-   
-}
-
-body.dark-mode .text-box {
-    background-color: #3D405B; /* Background color in dark mode */
-    color: #81B29A; /* Text color in dark mode */
-    border-color: #81B29A; /* Border color in dark mode */
-}
-
-.logo {
-    color: #ffffff;
+  }
+  
+  .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    font-style: italic;
-    padding: 0 2rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.logo-image {
-    height: 50px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-}
-
-ul {
-    list-style-type: none;
-    background: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-}
-
-ul li {
-    display: inline-block;
-    position: relative;
-    border-radius: 20px;
-}
-
-ul li a {
-    display: block;
-    padding: 15px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    font-size: 15px;
-    border-radius: 20px;
-}
-
-ul li ul.dropdown li {
-    display: block
-    /* border-radius: 20px;*/
-}
-
-ul li ul.dropdown {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    z-index: 999;
+  }
+  
+  .menu-toggle {
     display: none;
-    border-radius: 20px;
-    /* border-radius: 0px 0px 4px 4px; */
-}
-
-ul li a:hover {
-    background: #C41E3A;
-    border-radius: 20px;
-}
-
-ul li:hover ul.dropdown {
-    display: block;
-    border-radius: 20px;
-}
-
-nav {
-    height: 80px;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s;
+  }
+  
+  nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem calc((100vw - 1300px) / 2);
-}
-
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    header {
-        padding: 10px 20px;
+    gap: 2rem;
+  }
+  
+  nav a {
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  .theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+  }
+  .theme-toggle:hover {
+    color: var(--accent-color);
+  }
+  
+  @media (max-width: 768px) {
+    nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--background-color);
+      flex-direction: column;
+      width: 200px;
+      max-height: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: max-height 0.5s ease;
     }
-
-    .content-container {
-        margin-top: 80px; /* Adjust this value to move the content down */
+    nav.open {
+      max-height: 300px;
     }
-
-    .image-container {
-        flex-direction: column;
-        align-items: center;
+    .menu-toggle {
+      display: flex;
     }
-
-    .image-text {
-        margin-left: 0;
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    .text-box {
-        width: 90%;
-        top: 50px; /* Adjust this value to move the text box lower */
-    }
-}
-
-@media (min-width: 601px) {
-    .wrapper-main {
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) {
-    .wrapper-main {
-        width: 100%;
-    }
-}
-
-@media (min-width: 992px) {
-    .wrapper-main {
-        width: 100%;
-    }
-}
+  }
+  
+  section {
+    padding: 5rem 2rem;
+    background-color: var(--secondary-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section:nth-child(even) {
+    background-color: var(--background-color);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    max-width: 700px;
+    margin-bottom: 1rem;
+  }
+  
+  /* GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  .gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  

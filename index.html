@@ -1,59 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon"  type="image/x-icon" href="./Bilder/Logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TLOM</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Min Profesjonelle Nettside</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="star"></div>
-    <header>
-        <div class="logo">Project TLOM</div>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                    <li>
-                    <a href="#">Menu</a>   
-                    <ul class="dropdown">
-                        <li><a href="./project.html">Project</a></li>
-                        <li><a href="./about.html">About Me </a></li>
-                        <!--<li><a href="./project.html">Project 3</a></li>-->
-                    </ul>
-                </li>
-                <!-- <li><a href="./project.html">Project</a></li> -->
-                <!--<li><a href="about.html">About</a></li>-->
-            </ul>
-
-            <div class="nav-item">
-                <button id="toggle-button">Dark/Light</button>
-            </div>
-        </nav>
-    </header>
-
-    <div class="content-container">
-        <div class="left-container">
-            <div class="image-container">
-                <img src="./Bilder/Lulu.jpg" alt="Nydlig Pus" class="my-image">
-                <div class="image-text">This is my Cat LULU</div>
-            </div>
-        </div>
-
-        <div class="right-container">
-            <div class="image-container">
-                <img src="./Bilder/Melvin.jpg" alt="Nydlig Pus 2" class="top-right-image">
-                <div class="image-text">This is my other Cat MELVIN</div>
-            </div>
-        </div>
-
-        <div class="text-box">
-            <p><em>Our doubts are traitors, and make us lose the good we oft might win by fearing to attempt.</em><br><br><strong>-William Shakespeare</strong></p>
-        </div>
+  <header>
+    <div class="logo">MinNettside</div>
+    <button class="theme-toggle" id="themeToggle">🌙 Mørk</button>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    <nav id="navMenu">
+      <a href="#info">Info</a>
+      <a href="#om">Om</a>
+      <a href="#prosjekt">Prosjekt</a>
+    </nav>
+  </header>
 
-   
+  <section id="info">
+    <h2>Info</h2>
+    <p>
+      Her kan du skrive generell informasjon om tjenesten eller firmaet ditt.
+    </p>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="om">
+    <h2>Om</h2>
+    <p>
+      Her kan du beskrive deg selv eller virksomheten. Legg til bilder eller kontaktinfo om du vil.
+    </p>
+  </section>
+
+  <section id="prosjekt">
+    <h2>Prosjekt</h2>
+    <p>
+      Se noen av mine tidligere prosjekter nedenfor.
+    </p>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/400x250?text=Prosjekt+1" alt="Prosjekt 1">
+      <img src="https://via.placeholder.com/400x250?text=Prosjekt+2" alt="Prosjekt 2">
+      <img src="https://via.placeholder.com/400x250?text=Prosjekt+3" alt="Prosjekt 3">
+      <img src="https://via.placeholder.com/400x250?text=Prosjekt+4" alt="Prosjekt 4">
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
